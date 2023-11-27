@@ -9,3 +9,19 @@ Don't forget to change path to the .txt files in the code.
 csc Program.cs
 mono Program.exe
 ```
+
+```bash
+              		       ,.,
+              		      MMMM_    ,..,
+              		        "_ "__"MMMMM          ,...,,
+              		 ,..., __." --"    ,.,     _-"MMMMMMM
+              		MMMMMM"___ "_._   MMM"_."" _ """"""
+              		 """""    "" , \_.   "_. ."       #
+              		 #      ,,, _"__ \__./ ."      #
+              		    #  MMMMM_"  "_    ./          #
+              		 #      ''''      (    )
+              		  _______________.-'____"---._
+              		  \                          /
+              		   \________________________/
+              		     |_|                |_|
+```
