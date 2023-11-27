@@ -1,0 +1,6 @@
+/Users/ku/Documents/coding/C#/spring/bin/Debug/spring.exe
+/Users/ku/Documents/coding/C#/spring/bin/Debug/spring.pdb
+/Users/ku/Documents/coding/C#/spring/obj/Debug/spring.csproj.AssemblyReference.cache
+/Users/ku/Documents/coding/C#/spring/obj/Debug/spring.csproj.CoreCompileInputs.cache
+/Users/ku/Documents/coding/C#/spring/obj/Debug/spring.exe
+/Users/ku/Documents/coding/C#/spring/obj/Debug/spring.pdb
