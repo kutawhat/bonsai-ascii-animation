@@ -61,14 +61,14 @@ public class Program
             for (int i = 0; i < tree.Length; i++)
             {
                 j++;
-                if (j % 2 == 0 && tree[i] == 'M')
+                if (tree[i] == 'M')
                 {
-                    Console.ForegroundColor = mainColor;
+                    Console.ForegroundColor = (j % 2 == 0) ? mainColor : ConsoleColor.Gray;
                     Console.Write(tree[i]);
                 }
                 else if (tree[i] == '#')
                 {
-                    Console.ForegroundColor = (j % 2 != 0) ? mainColor : ConsoleColor.DarkGray;
+                    Console.ForegroundColor = (j % 2 == 0) ? mainColor : ConsoleColor.DarkGray;
                     Console.Write(tree[i]);
                 }
                 else if (tree[i] == '"' || tree[i] == '.' || tree[i] == ',' || tree[i] == 39)
@@ -88,14 +88,14 @@ public class Program
             for (int i = 0; i < tree.Length; i++)
             {
                 j++;
-                if (j % 2 != 0 && tree[i] == 'M')
+                if (tree[i] == 'M')
                 {
-                    Console.ForegroundColor = mainColor;
+                    Console.ForegroundColor = (j % 2 != 0) ? mainColor : ConsoleColor.Gray;
                     Console.Write(tree[i]);
                 }
                 else if (tree[i] == '#')
                 {
-                    Console.ForegroundColor = (j % 2 == 0) ? mainColor : ConsoleColor.DarkGray;
+                    Console.ForegroundColor = (j % 2 != 0) ? mainColor : ConsoleColor.DarkGray;
                     Console.Write(tree[i]);
                 }
                 else if (tree[i] == '"' || tree[i] == '.' || tree[i] == ',' || tree[i] == 39)
@@ -122,14 +122,14 @@ public class Program
             for (int i = 0; i < tree1.Length; i++)
             {
                 j++;
-                if (j % 2 == 0 && tree1[i] == 'M')
+                if (tree1[i] == 'M')
                 {
-                    Console.ForegroundColor = mainColor;
+                    Console.ForegroundColor = (j % 2 == 0) ? mainColor : ConsoleColor.Gray;
                     Console.Write(tree1[i]);
                 }
                 else if (tree1[i] == '#')
                 {
-                    Console.ForegroundColor = mainColor;
+                    Console.ForegroundColor = (j % 2 == 0) ? mainColor : ConsoleColor.Gray;
                     Console.Write(tree1[i]);
                 }
                 else if (tree1[i] == '"' || tree1[i] == '.' || tree1[i] == ',' || tree1[i] == 39)
@@ -149,9 +149,9 @@ public class Program
             for (int i = 0; i < tree2.Length; i++)
             {
                 j++;
-                if (j % 2 == 0 && tree2[i] == 'M')
+                if (tree2[i] == 'M')
                 {
-                    Console.ForegroundColor = mainColor;
+                    Console.ForegroundColor = (j % 2 == 0) ? mainColor : ConsoleColor.Gray;
                     Console.Write(tree2[i]);
                 }
                 else if (tree2[i] == '#')
