@@ -1,16 +1,16 @@
-This code will add an animated bonsai tree at your terminal.
+# Этот код добавит анимированное дерево бонсай в ваш терминал ∗
 
-Don't forget to change path to the .txt files in the code.
+Не забудьте изменить путь к файлам .txt в коде!
 
-## What to do then:
-2. Open the Terminal and cd to the directive with file
-5. Type in Terminal:
-```bash
+### Что делать дальше:
+1. Откройте терминал и перейдите к директиве с файлом
+2. Вбейте в терминале:
+```zsh
 csc Program.cs
 mono Program.exe
 ```
 
-```bash
+```zsh
               		       ,.,
               		      MMMM_    ,..,
               		        "_ "__"MMMMM          ,...,,
