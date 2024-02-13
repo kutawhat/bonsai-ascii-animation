@@ -8,8 +8,7 @@
 csc Program.cs
 mono Program.exe
 ```
-
-```zsh
+<!--```zsh
               		       ,.,
               		      MMMM_    ,..,
               		        "_ "__"MMMMM          ,...,,
@@ -23,5 +22,7 @@ mono Program.exe
               		  \                          /
               		   \________________________/
               		     |_|                |_|
-```
+```-->
 4. Наслаждайтесь ∗
+
+![Снимок экрана 2024-02-14 в 01 05](https://github.com/kutawhat/bonsai-ascii-animation/assets/64655969/9e302123-02e3-4b23-ad76-10d620978b2d)
