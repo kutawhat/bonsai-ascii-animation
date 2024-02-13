@@ -26,3 +26,7 @@ mono Program.exe
 4. Наслаждайтесь ∗
 
 ![Снимок экрана 2024-02-14 в 01 08](https://github.com/kutawhat/bonsai-ascii-animation/assets/64655969/c04c42ce-6764-4725-a54d-df6bb87b8a01)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8a078e95d179f157809c6c8f08b734960bd4ae16
