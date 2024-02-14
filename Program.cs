@@ -27,16 +27,66 @@ public class Program
                         secondaryColor = ConsoleColor.Cyan;
                         break;
                     case 2:
-                        mainColor = ConsoleColor.Magenta;
-                        secondaryColor = ConsoleColor.Magenta;
+                        Console.WriteLine("Выбери дерево: \n 1 – Сакура \n 2 – Яблоня \n 3 – Микс");
+                        userInput = Console.ReadLine();
+                        if (int.TryParse(userInput, out userNumber))
+                        {
+                            switch (userNumber)
+                            {
+                                case 1:
+                                    mainColor = ConsoleColor.Magenta;
+                                    secondaryColor = ConsoleColor.Magenta;
+                                    break;
+                                case 2:
+                                    mainColor = ConsoleColor.Gray;
+                                    secondaryColor = ConsoleColor.Green;
+                                    break;
+                                case 3:
+                                    mainColor = ConsoleColor.Magenta;
+                                    secondaryColor = ConsoleColor.Green;
+                                    break;
+                                default:
+                                    Console.WriteLine("Некорректное значение\n");
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Некорректный ввод\n");
+                        }
                         break;
                     case 3:
                         mainColor = ConsoleColor.DarkGreen;
                         secondaryColor = ConsoleColor.Green;
                         break;
                     case 4:
-                        mainColor = ConsoleColor.Red;
-                        secondaryColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Выбери дерево: \n 1 – Красное \n 2 – Желтое \n 3 – Микс");
+                        userInput = Console.ReadLine();
+                        if (int.TryParse(userInput, out userNumber))
+                        {
+                            switch (userNumber)
+                            {
+                                case 1:
+                                    mainColor = ConsoleColor.Red;
+                                    secondaryColor = ConsoleColor.DarkRed;
+                                    break;
+                                case 2:
+                                    mainColor = ConsoleColor.Yellow;
+                                    secondaryColor = ConsoleColor.DarkYellow;
+                                    break;
+                                case 3:
+                                    mainColor = ConsoleColor.Red;
+                                    secondaryColor = ConsoleColor.Yellow;
+                                    break;
+                                default:
+                                    Console.WriteLine("Некорректное значение\n");
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Некорректный ввод\n");
+                        }
                         break;
                     default:
                         Console.WriteLine("Некорректное значение\n");
