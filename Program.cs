@@ -12,41 +12,47 @@ public class Program
 
     public static void ChooseSeason()
     {
+        bool isValidInput = false;
+
         do
         {
             Console.WriteLine("Выбери сезон: \n 1 – Зима \n 2 – Весна \n 3 – Лето \n 4 – Осень");
             string userInput = Console.ReadLine();
 
-            int userNumber;
-            if (int.TryParse(userInput, out userNumber))
+            if (int.TryParse(userInput, out int userNumber))
             {
                 switch (userNumber)
                 {
                     case 1:
                         mainColor = ConsoleColor.Blue;
                         secondaryColor = ConsoleColor.Cyan;
+                        isValidInput = true;
                         break;
+
                     case 2:
                         Console.WriteLine("Выбери дерево: \n 1 – Сакура \n 2 – Яблоня \n 3 – Микс");
                         userInput = Console.ReadLine();
-                        if (int.TryParse(userInput, out userNumber))
+                        if (int.TryParse(userInput, out int treeNumber))
                         {
-                            switch (userNumber)
+                            switch (treeNumber)
                             {
                                 case 1:
                                     mainColor = ConsoleColor.Magenta;
                                     secondaryColor = ConsoleColor.Magenta;
+                                    isValidInput = true;
                                     break;
                                 case 2:
                                     mainColor = ConsoleColor.Gray;
                                     secondaryColor = ConsoleColor.Green;
+                                    isValidInput = true;
                                     break;
                                 case 3:
                                     mainColor = ConsoleColor.Magenta;
                                     secondaryColor = ConsoleColor.Green;
+                                    isValidInput = true;
                                     break;
                                 default:
-                                    Console.WriteLine("Некорректное значение\n");
+                                    Console.WriteLine("Некорректный ввод\n");
                                     break;
                             }
                         }
@@ -55,31 +61,37 @@ public class Program
                             Console.WriteLine("Некорректный ввод\n");
                         }
                         break;
+
                     case 3:
                         mainColor = ConsoleColor.DarkGreen;
                         secondaryColor = ConsoleColor.Green;
+                        isValidInput = true;
                         break;
+
                     case 4:
                         Console.WriteLine("Выбери дерево: \n 1 – Красное \n 2 – Желтое \n 3 – Микс");
                         userInput = Console.ReadLine();
-                        if (int.TryParse(userInput, out userNumber))
+                        if (int.TryParse(userInput, out treeNumber))
                         {
-                            switch (userNumber)
+                            switch (treeNumber)
                             {
                                 case 1:
                                     mainColor = ConsoleColor.Red;
                                     secondaryColor = ConsoleColor.DarkRed;
+                                    isValidInput = true;
                                     break;
                                 case 2:
                                     mainColor = ConsoleColor.Yellow;
                                     secondaryColor = ConsoleColor.DarkYellow;
+                                    isValidInput = true;
                                     break;
                                 case 3:
                                     mainColor = ConsoleColor.Red;
                                     secondaryColor = ConsoleColor.Yellow;
+                                    isValidInput = true;
                                     break;
                                 default:
-                                    Console.WriteLine("Некорректное значение\n");
+                                    Console.WriteLine("Некорректный ввод\n");
                                     break;
                             }
                         }
@@ -88,8 +100,9 @@ public class Program
                             Console.WriteLine("Некорректный ввод\n");
                         }
                         break;
+
                     default:
-                        Console.WriteLine("Некорректное значение\n");
+                        Console.WriteLine("Некорректный ввод\n");
                         break;
                 }
             }
@@ -97,7 +110,7 @@ public class Program
             {
                 Console.WriteLine("Некорректный ввод\n");
             }
-        } while (mainColor == 0);
+        } while (!isValidInput);
     }
 
     public static void PrintBonsai(string tree)
@@ -268,7 +281,7 @@ public class Program
                         PrintBonsaiDouble(tree1, tree2);
                         break;
                     default:
-                        Console.WriteLine("Некорректное значение\n");
+                        Console.WriteLine("Некорректный ввод\n");
                         break;
                 }
             }
