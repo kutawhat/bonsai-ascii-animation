@@ -4,13 +4,12 @@ using System.Threading;
 
 public class Program
 {
+    public static int delay = 800;
     public static ConsoleColor mainColor;
     public static ConsoleColor secondaryColor;
     public static ConsoleColor tretiaryColor = ConsoleColor.Gray;
 
     public static ConsoleColor treeColor = ConsoleColor.Gray;
-
-    public static int delay = 800;
 
     // static ConsoleColor[] colors = (ConsoleColor[])ConsoleColor.GetValues(typeof(ConsoleColor));
 
@@ -20,8 +19,14 @@ public class Program
 
         do
         {
-            Console.WriteLine("Выбери сезон: \n 1 – Зима \n 2 – Весна \n 3 – Лето \n 4 – Осень");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Выбери сезон:");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("1 – Зима \n2 – Весна \n3 – Лето \n4 – Осень");
+
             string userInput = Console.ReadLine();
+
+            Console.Clear();
 
             if (int.TryParse(userInput, out int userNumber))
             {
@@ -31,11 +36,17 @@ public class Program
                         mainColor = ConsoleColor.Blue;
                         secondaryColor = ConsoleColor.Cyan;
                         isValidInput = true;
+                        Console.Clear();
                         break;
 
                     case 2:
-                        Console.WriteLine("Выбери дерево: \n 1 – Сакура \n 2 – Яблоня \n 3 – Микс");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Выбери дерево:");
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.WriteLine("1 – Сакура \n2 – Яблоня \n3 – Микс");
+
                         userInput = Console.ReadLine();
+
                         if (int.TryParse(userInput, out int treeNumber))
                         {
                             switch (treeNumber)
@@ -44,25 +55,30 @@ public class Program
                                     mainColor = ConsoleColor.Magenta;
                                     secondaryColor = ConsoleColor.Magenta;
                                     isValidInput = true;
+                                    Console.Clear();
                                     break;
                                 case 2:
                                     mainColor = ConsoleColor.Gray;
                                     secondaryColor = ConsoleColor.Green;
                                     tretiaryColor = ConsoleColor.Green;
                                     isValidInput = true;
+                                    Console.Clear();
                                     break;
                                 case 3:
                                     mainColor = ConsoleColor.Magenta;
                                     secondaryColor = ConsoleColor.Green;
                                     isValidInput = true;
+                                    Console.Clear();
                                     break;
                                 default:
+                                    Console.ForegroundColor = ConsoleColor.Red;
                                     Console.WriteLine("Некорректный ввод\n");
                                     break;
                             }
                         }
                         else
                         {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Некорректный ввод\n");
                         }
                         break;
@@ -74,8 +90,13 @@ public class Program
                         break;
 
                     case 4:
-                        Console.WriteLine("Выбери дерево: \n 1 – Красное \n 2 – Желтое \n 3 – Микс");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Выбери дерево:");
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.WriteLine("1 – Красное \n2 – Желтое \n3 – Микс");
+
                         userInput = Console.ReadLine();
+
                         if (int.TryParse(userInput, out treeNumber))
                         {
                             switch (treeNumber)
@@ -84,35 +105,42 @@ public class Program
                                     mainColor = ConsoleColor.Red;
                                     secondaryColor = ConsoleColor.DarkRed;
                                     isValidInput = true;
+                                    Console.Clear();
                                     break;
                                 case 2:
                                     mainColor = ConsoleColor.Yellow;
                                     secondaryColor = ConsoleColor.DarkYellow;
                                     isValidInput = true;
+                                    Console.Clear();
                                     break;
                                 case 3:
                                     mainColor = ConsoleColor.DarkRed;
                                     secondaryColor = ConsoleColor.DarkYellow;
                                     isValidInput = true;
+                                    Console.Clear();
                                     break;
                                 default:
+                                    Console.ForegroundColor = ConsoleColor.Red;
                                     Console.WriteLine("Некорректный ввод\n");
                                     break;
                             }
                         }
                         else
                         {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Некорректный ввод\n");
                         }
                         break;
 
                     default:
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Некорректный ввод\n");
                         break;
                 }
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Некорректный ввод\n");
             }
         } while (!isValidInput);
@@ -120,6 +148,7 @@ public class Program
 
     public static void PrintBonsai(string tree)
     {
+        Console.Clear();
         while (!Console.KeyAvailable)
         {
             Thread.Sleep(delay);
@@ -182,6 +211,7 @@ public class Program
 
     public static void PrintBonsaiDouble(string tree1, string tree2)
     {
+        Console.Clear();
         while (!Console.KeyAvailable)
         {
             Thread.Sleep(delay);
@@ -239,10 +269,12 @@ public class Program
                 }
             }
         }
+        Console.Clear();
     }
 
     static void Main(string[] args)
     {
+        Console.Clear();
         ChooseSeason();
 
         //Путь до папки со всеми ascii деревьями
@@ -254,7 +286,11 @@ public class Program
         int userNumber;
         do
         {
-            Console.WriteLine("Выбери бонсай \r\n 1 – Без листвы \r\n 2 – С листвой \r\n 3 – С листвой +");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Выбери бонсай");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("1 – Без листвы \n2 – С листвой \n3 – С листвой +");
+
             string userInput = Console.ReadLine();
 
             if (int.TryParse(userInput, out userNumber))
@@ -286,14 +322,35 @@ public class Program
                         PrintBonsaiDouble(tree1, tree2);
                         break;
                     default:
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Некорректный ввод\n");
                         break;
                 }
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Некорректный ввод\n");
             }
         } while (userNumber < 1 || userNumber > 3);
     }
 }
+
+// using System;
+// using static bonsai.SeasonChooser;
+// using static bonsai.TreeSelector;
+
+// namespace bonsai
+// {
+
+//     public class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             Console.Clear();
+//             ChooseSeason();
+//             SelectTree();
+//         }
+//     }
+
+// }

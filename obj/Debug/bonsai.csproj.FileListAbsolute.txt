@@ -1,0 +1,6 @@
+/Users/ku/Downloads/bonsai/bin/Debug/bonsai.exe
+/Users/ku/Downloads/bonsai/bin/Debug/bonsai.pdb
+/Users/ku/Downloads/bonsai/obj/Debug/bonsai.csproj.AssemblyReference.cache
+/Users/ku/Downloads/bonsai/obj/Debug/bonsai.csproj.CoreCompileInputs.cache
+/Users/ku/Downloads/bonsai/obj/Debug/bonsai.exe
+/Users/ku/Downloads/bonsai/obj/Debug/bonsai.pdb
