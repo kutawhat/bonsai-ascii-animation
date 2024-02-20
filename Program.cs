@@ -6,6 +6,10 @@ public class Program
 {
     public static ConsoleColor mainColor;
     public static ConsoleColor secondaryColor;
+    public static ConsoleColor tretiaryColor = ConsoleColor.Gray;
+
+    public static ConsoleColor treeColor = ConsoleColor.Gray;
+
     public static int delay = 800;
 
     // static ConsoleColor[] colors = (ConsoleColor[])ConsoleColor.GetValues(typeof(ConsoleColor));
@@ -44,6 +48,7 @@ public class Program
                                 case 2:
                                     mainColor = ConsoleColor.Gray;
                                     secondaryColor = ConsoleColor.Green;
+                                    tretiaryColor = ConsoleColor.Green;
                                     isValidInput = true;
                                     break;
                                 case 3:
@@ -86,8 +91,8 @@ public class Program
                                     isValidInput = true;
                                     break;
                                 case 3:
-                                    mainColor = ConsoleColor.Red;
-                                    secondaryColor = ConsoleColor.Yellow;
+                                    mainColor = ConsoleColor.DarkRed;
+                                    secondaryColor = ConsoleColor.DarkYellow;
                                     isValidInput = true;
                                     break;
                                 default:
@@ -126,7 +131,7 @@ public class Program
                 j++;
                 if (tree[i] == 'M')
                 {
-                    Console.ForegroundColor = (j % 2 == 0) ? mainColor : ConsoleColor.Gray;
+                    Console.ForegroundColor = (j % 2 == 0) ? mainColor : tretiaryColor;
                     Console.Write(tree[i]);
                 }
                 else if (tree[i] == '#')
@@ -141,7 +146,7 @@ public class Program
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = treeColor;
                     Console.Write(tree[i]);
                 }
             }
@@ -153,7 +158,7 @@ public class Program
                 j++;
                 if (tree[i] == 'M')
                 {
-                    Console.ForegroundColor = (j % 2 != 0) ? mainColor : ConsoleColor.Gray;
+                    Console.ForegroundColor = (j % 2 != 0) ? mainColor : tretiaryColor;
                     Console.Write(tree[i]);
                 }
                 else if (tree[i] == '#')
@@ -168,7 +173,7 @@ public class Program
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = treeColor;
                     Console.Write(tree[i]);
                 }
             }
@@ -187,7 +192,7 @@ public class Program
                 j++;
                 if (tree1[i] == 'M')
                 {
-                    Console.ForegroundColor = (j % 2 == 0) ? mainColor : ConsoleColor.Gray;
+                    Console.ForegroundColor = (j % 2 == 0) ? mainColor : tretiaryColor;
                     Console.Write(tree1[i]);
                 }
                 else if (tree1[i] == '#')
@@ -202,7 +207,7 @@ public class Program
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = treeColor;
                     Console.Write(tree1[i]);
                 }
             }
@@ -214,7 +219,7 @@ public class Program
                 j++;
                 if (tree2[i] == 'M')
                 {
-                    Console.ForegroundColor = (j % 2 == 0) ? mainColor : ConsoleColor.Gray;
+                    Console.ForegroundColor = (j % 2 == 0) ? mainColor : tretiaryColor;
                     Console.Write(tree2[i]);
                 }
                 else if (tree2[i] == '#')
@@ -229,7 +234,7 @@ public class Program
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = treeColor;
                     Console.Write(tree2[i]);
                 }
             }
