@@ -4,3 +4,9 @@
 /Users/ku/Downloads/bonsai/obj/Debug/bonsai.csproj.CoreCompileInputs.cache
 /Users/ku/Downloads/bonsai/obj/Debug/bonsai.exe
 /Users/ku/Downloads/bonsai/obj/Debug/bonsai.pdb
+/Users/ku/Documents/coding/archive/csh/bonsai/bin/Debug/bonsai.exe
+/Users/ku/Documents/coding/archive/csh/bonsai/bin/Debug/bonsai.pdb
+/Users/ku/Documents/coding/archive/csh/bonsai/obj/Debug/bonsai.csproj.AssemblyReference.cache
+/Users/ku/Documents/coding/archive/csh/bonsai/obj/Debug/bonsai.csproj.CoreCompileInputs.cache
+/Users/ku/Documents/coding/archive/csh/bonsai/obj/Debug/bonsai.exe
+/Users/ku/Documents/coding/archive/csh/bonsai/obj/Debug/bonsai.pdb
