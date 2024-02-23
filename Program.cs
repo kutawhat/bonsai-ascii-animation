@@ -145,6 +145,7 @@ public class Program
     {
         Console.Clear();
 
+        //Путь до папки со всеми ascii деревьями
         string mainPath = "/Users/ku/Documents/coding/ascii-animations/bonsai/trees/";
         string[] treeNames = { "tree.txt", "tree1_1.txt", "tree2_1.txt", "tree2_2.txt" };
         string[] treePaths = treeNames.Select(name => Path.Combine(mainPath, name)).ToArray();
