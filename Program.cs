@@ -5,11 +5,18 @@ using System.Threading;
 
 public class Program
 {
-    public static int delay = 800;
-    public static ConsoleColor mainColor;
-    public static ConsoleColor secondaryColor;
-    public static ConsoleColor tretiaryColor = ConsoleColor.Gray;
-    public static ConsoleColor treeColor = ConsoleColor.Gray;
+    private static int delay = 800;
+    private static ConsoleColor mainColor;
+    private static ConsoleColor secondaryColor;
+    private static ConsoleColor tretiaryColor = ConsoleColor.Gray;
+    private static ConsoleColor treeColor = ConsoleColor.Gray;
+    private static ConsoleColor[] colors = {
+        ConsoleColor.Black, ConsoleColor.Red, ConsoleColor.DarkRed, ConsoleColor.Yellow,
+        ConsoleColor.DarkYellow, ConsoleColor.Green, ConsoleColor.DarkGreen,
+        ConsoleColor.Cyan, ConsoleColor.DarkCyan, ConsoleColor.Blue,
+        ConsoleColor.DarkBlue, ConsoleColor.Magenta, ConsoleColor.DarkMagenta,
+        ConsoleColor.Gray, ConsoleColor.DarkGray, ConsoleColor.White
+    };
 
     private static void InvalidInput()
     {
@@ -115,8 +122,27 @@ public class Program
 
     private static void SetSummer()
     {
-        mainColor = ConsoleColor.DarkGreen;
-        secondaryColor = ConsoleColor.Green;
+        do
+        {
+            SystemMessage("Выбери дерево:", "1 – Береза \n2 – Лимонное\n", ConsoleColor.DarkYellow);
+
+            int.TryParse(Console.ReadLine(), out int treeNumber);
+
+            switch (treeNumber)
+            {
+                case 1:
+                    mainColor = ConsoleColor.DarkGreen;
+                    secondaryColor = ConsoleColor.DarkGreen;
+                    return;
+                case 2:
+                    mainColor = ConsoleColor.Yellow;
+                    secondaryColor = ConsoleColor.Green;
+                    return;
+                default:
+                    InvalidInput();
+                    break;
+            }
+        } while (true);
     }
 
     private static void SetAutumn()
@@ -161,27 +187,22 @@ public class Program
     {
         Console.Clear();
 
-        ConsoleColor[] colors = (ConsoleColor[])ConsoleColor.GetValues(typeof(ConsoleColor));
-        ConsoleColor currentColor = ConsoleColor.White;
+        ConsoleColor currentColor = colors[15];
         int userNumber;
 
         do
         {
-            SystemMessage(message, "1  – Темно-синий \n2  – Темно-зеленый \n3  – Темно-голубой \n4  – Темно-красный \n5  – Темно-фиолетовый \n6  – Темно-желтый \n7  – Темно-серый \n8  – Cерый \n9  – Синий \n10 – Зеленый \n11 – Голубой \n12 – Красный \n13 – Розовый \n14 – Желтый \n15 – Белый\n", headColor);
+            SystemMessage(message, "1  – Красный \n2  – Темно-красный \n3  – Желтый \n4  – Темно-желтый \n5  – Зеленый \n6  – Темно-зеленый \n7  – Голубой \n8  – Темно-голубой \n9  – Синий \n10 – Темно-синий \n11 – Фиолетовый \n12 – Розовый \n13 – Серый \n14 – Темно-серый \n15 – Белый\n", headColor);
 
-            if (int.TryParse(Console.ReadLine(), out userNumber) && userNumber >= 1 && userNumber <= 16)
+            if (int.TryParse(Console.ReadLine(), out userNumber) && userNumber >= 1 && userNumber <= 15)
             {
-                if (userNumber == 7 || userNumber == 8)
-                {
-                    userNumber = 15 - userNumber;
-                }
                 currentColor = colors[userNumber];
             }
             else
             {
                 InvalidInput();
             }
-        } while (userNumber < 1 || userNumber > 16);
+        } while (userNumber < 1 || userNumber > 15);
 
         return currentColor;
     }
@@ -191,7 +212,7 @@ public class Program
         Console.Clear();
 
         //Путь до папки со всеми ascii деревьями
-        string mainPath = "/Users/ku/Documents/coding/ascii-animations/bonsai/trees/";
+        string mainPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "trees");
         string[] treeNames = { "tree.txt", "tree1_1.txt", "tree2_1.txt", "tree2_2.txt" };
         string[] treePaths = treeNames.Select(name => Path.Combine(mainPath, name)).ToArray();
 

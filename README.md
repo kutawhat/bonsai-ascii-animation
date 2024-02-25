@@ -6,24 +6,14 @@
 ```zsh
 brew install mono
 ```
-2. Измените путь к файлам .txt в коде файла Program.cs:
-```csh
-public static void SelectAnimation()
-{
-    Console.Clear();
-
-    //Путь до папки со всеми ascii деревьями
-    string mainPath = "/Users/ku/Documents/coding/ascii-animations/bonsai/trees/";
-	
-	...
-}
-```
-3. Откройте терминал и перейдите к директиве bonsai
-4. Вбейте в терминале:
+2. Откройте терминал и перейдите к директиве bonsai
+3. Вбейте в терминале:
 ```zsh
 csc Program.cs
 mono Program.exe
 ```
+4. Наслаждайтесь ∗
+
 <!--```zsh
               		       ,.,
               		      MMMM_    ,..,
@@ -39,6 +29,4 @@ mono Program.exe
               		   \________________________/
               		     |_|                |_|
 ```-->
-5. Наслаждайтесь ∗
-
 <!-- ![preview](https://github.com/kutawhat/bonsai-ascii-animation/assets/64655969/0cf99a2a-640e-4e23-8bc9-ad1067f451a0) -->
