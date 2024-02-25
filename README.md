@@ -1,4 +1,5 @@
 # Этот код добавит анимированное дерево бонсай в ваш терминал
+![banner](https://github.com/kutawhat/bonsai-ascii-animation/assets/64655969/4004f870-29d5-49cc-b882-8d596e262d8b)
 
 ## Как запустить:
 1. Установите компилятор c# для терминала:
@@ -40,5 +41,4 @@ mono Program.exe
 ```-->
 5. Наслаждайтесь ∗
 
-![banner](https://github.com/kutawhat/bonsai-ascii-animation/assets/64655969/4004f870-29d5-49cc-b882-8d596e262d8b)
 <!-- ![preview](https://github.com/kutawhat/bonsai-ascii-animation/assets/64655969/0cf99a2a-640e-4e23-8bc9-ad1067f451a0) -->
