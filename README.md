@@ -7,14 +7,14 @@ brew install mono
 ```
 2. Измените путь к файлам .txt в коде файла Program.cs:
 ```csh
- public static void SelectAnimation()
-    {
-        Console.Clear();
+public static void SelectAnimation()
+{
+    Console.Clear();
 
-        //Путь до папки со всеми ascii деревьями
-        string mainPath = "/Users/ku/Documents/coding/ascii-animations/bonsai/trees/";
+    //Путь до папки со всеми ascii деревьями
+    string mainPath = "/Users/ku/Documents/coding/ascii-animations/bonsai/trees/";
 	...
-	}
+}
 ```
 3. Откройте терминал и перейдите к директиве bonsai
 4. Вбейте в терминале:
