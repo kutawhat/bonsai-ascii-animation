@@ -40,4 +40,5 @@ mono Program.exe
 ```-->
 5. Наслаждайтесь ∗
 
-![preview](https://github.com/kutawhat/bonsai-ascii-animation/assets/64655969/0cf99a2a-640e-4e23-8bc9-ad1067f451a0)
+![banner](https://github.com/kutawhat/bonsai-ascii-animation/assets/64655969/4004f870-29d5-49cc-b882-8d596e262d8b)
+<!-- ![preview](https://github.com/kutawhat/bonsai-ascii-animation/assets/64655969/0cf99a2a-640e-4e23-8bc9-ad1067f451a0) -->
