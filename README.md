@@ -11,11 +11,11 @@ brew install mono
 ```zsh
 make
 ```
-или
+<!-- или
 ```zsh
 csc Program.cs
 mono Program.exe
-```
+``` -->
 
 4. Наслаждайтесь ∗
 

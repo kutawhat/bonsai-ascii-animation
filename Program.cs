@@ -25,14 +25,25 @@ public class Program
         Console.WriteLine("Некорректный ввод\n");
     }
 
-    private static void SystemMessage(string mainText, string listText, ConsoleColor headColor)
+    private static void SystemMessage(string mainText, string listText, ConsoleColor headColor, bool colorful)
     {
         Console.ForegroundColor = headColor;
         Console.WriteLine(mainText);
-        Console.ForegroundColor = ConsoleColor.Gray;
-        Console.WriteLine(listText);
+        if (!colorful)
+        {
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine(listText);
+        }
+        else
+        {
+            string[] lines = listText.Split('\n');
+            for (int i = 0; i < lines.Length - 1; i++)
+            {
+                Console.ForegroundColor = colors[i + 1];
+                Console.WriteLine(lines[i]);
+            }
+        }
     }
-
 
     public static void ChooseSeason()
     {
@@ -40,7 +51,7 @@ public class Program
 
         do
         {
-            SystemMessage("Выбери сезон:", "1 – Зима \n2 – Весна \n3 – Лето \n4 – Осень \n5 – Свой вайб\n", ConsoleColor.Green);
+            SystemMessage("Выбери сезон:", "1 – Зима \n2 – Весна \n3 – Лето \n4 – Осень \n5 – Свой вайб\n", ConsoleColor.Green, false);
 
             int.TryParse(Console.ReadLine(), out int seasonNumber);
 
@@ -81,7 +92,7 @@ public class Program
 
         do
         {
-            SystemMessage("Выбери дерево:", "1 – Сакура \n2 – Павлония \n3 – Магнолия \n4 – Сирень \n5 – Вишня \n6 – Яблоня\n", ConsoleColor.Magenta);
+            SystemMessage("Выбери дерево:", "1 – Сакура \n2 – Павлония \n3 – Магнолия \n4 – Сирень \n5 – Вишня \n6 – Яблоня\n", ConsoleColor.Magenta, false);
 
             int.TryParse(Console.ReadLine(), out int treeNumber);
 
@@ -124,7 +135,7 @@ public class Program
     {
         do
         {
-            SystemMessage("Выбери дерево:", "1 – Береза \n2 – Лимонное\n", ConsoleColor.DarkYellow);
+            SystemMessage("Выбери дерево:", "1 – Береза \n2 – Лимонное\n", ConsoleColor.DarkYellow, false);
 
             int.TryParse(Console.ReadLine(), out int treeNumber);
 
@@ -151,7 +162,7 @@ public class Program
 
         do
         {
-            SystemMessage("Выбери дерево:", "1 – Красное \n2 – Желтое \n3 – Микс\n", ConsoleColor.Yellow);
+            SystemMessage("Выбери дерево:", "1 – Красное \n2 – Желтое \n3 – Микс\n", ConsoleColor.Yellow, false);
 
             int.TryParse(Console.ReadLine(), out int treeNumber);
 
@@ -179,8 +190,8 @@ public class Program
 
     private static void SetCustom()
     {
-        mainColor = SetCustomHelper("Выбери основной цвет:", ConsoleColor.Green);
-        secondaryColor = SetCustomHelper("Выбери дополнительный цвет:", ConsoleColor.Yellow);
+        mainColor = SetCustomHelper("Выбери основной цвет:", ConsoleColor.Gray);
+        secondaryColor = SetCustomHelper("Выбери дополнительный цвет:", ConsoleColor.Gray);
     }
 
     private static ConsoleColor SetCustomHelper(string message, ConsoleColor headColor)
@@ -192,7 +203,7 @@ public class Program
 
         do
         {
-            SystemMessage(message, "1  – Красный \n2  – Темно-красный \n3  – Желтый \n4  – Темно-желтый \n5  – Зеленый \n6  – Темно-зеленый \n7  – Голубой \n8  – Темно-голубой \n9  – Синий \n10 – Темно-синий \n11 – Фиолетовый \n12 – Розовый \n13 – Серый \n14 – Темно-серый \n15 – Белый\n", headColor);
+            SystemMessage(message, "1  – Красный \n2  – Темно-красный \n3  – Желтый \n4  – Темно-желтый \n5  – Зеленый \n6  – Темно-зеленый \n7  – Голубой \n8  – Темно-голубой \n9  – Синий \n10 – Темно-синий \n11 – Фиолетовый \n12 – Розовый \n13 – Серый \n14 – Темно-серый \n15 – Белый\n", headColor, true);
 
             if (int.TryParse(Console.ReadLine(), out userNumber) && userNumber >= 1 && userNumber <= 15)
             {
@@ -219,7 +230,7 @@ public class Program
         int animationNumber;
         do
         {
-            SystemMessage("Выбери бонсай", "1 – Без листвы \n2 – С листвой \n3 – С листвой +\n", ConsoleColor.Blue);
+            SystemMessage("Выбери бонсай", "1 – Без листвы \n2 – С листвой \n3 – С листвой +\n", ConsoleColor.Blue, false);
 
             if (int.TryParse(Console.ReadLine(), out animationNumber) && animationNumber >= 1 && animationNumber <= 3)
             {
