@@ -32,7 +32,7 @@ public class Program
         Console.Clear();
         do
         {
-            SystemMessage("Выбери сезон:", "1 – Зима \n2 – Весна \n3 – Лето \n4 – Осень\n");
+            SystemMessage("Выбери сезон:", "1 – Зима \n2 – Весна \n3 – Лето \n4 – Осень \n5 – Свой вайб\n");
 
             int.TryParse(Console.ReadLine(), out int seasonNumber);
 
@@ -49,6 +49,9 @@ public class Program
                     return;
                 case 4:
                     SetAutumn();
+                    return;
+                case 5:
+                    SetCustom();
                     return;
                 default:
                     InvalidInput();
@@ -69,7 +72,7 @@ public class Program
         Console.Clear();
         do
         {
-            SystemMessage("Выбери дерево:", "1 – Сакура \n2 – Яблоня \n3 – Сирень \n4 – Вишня \n5 – Микс\n");
+            SystemMessage("Выбери дерево:", "1 – Сакура \n2 – Павлония \n3 – Магнолия \n4 – Сирень \n5 – Вишня \n6 – Яблоня\n");
 
             int.TryParse(Console.ReadLine(), out int treeNumber);
 
@@ -80,22 +83,26 @@ public class Program
                     secondaryColor = ConsoleColor.Magenta;
                     return;
                 case 2:
-                    mainColor = ConsoleColor.Gray;
-                    secondaryColor = ConsoleColor.Green;
-                    tretiaryColor = ConsoleColor.Green;
+                    mainColor = ConsoleColor.DarkMagenta;
+                    secondaryColor = ConsoleColor.DarkMagenta;
                     return;
                 case 3:
-                    mainColor = ConsoleColor.DarkMagenta;
+                    mainColor = ConsoleColor.Magenta;
                     secondaryColor = ConsoleColor.Green;
                     return;
                 case 4:
+                    mainColor = ConsoleColor.DarkMagenta;
+                    secondaryColor = ConsoleColor.Green;
+                    return;
+                case 5:
                     mainColor = ConsoleColor.Magenta;
                     secondaryColor = ConsoleColor.Gray;
                     tretiaryColor = ConsoleColor.White;
                     return;
-                case 5:
-                    mainColor = ConsoleColor.Magenta;
+                case 6:
+                    mainColor = ConsoleColor.Gray;
                     secondaryColor = ConsoleColor.Green;
+                    tretiaryColor = ConsoleColor.Green;
                     return;
                 default:
                     InvalidInput();
@@ -139,6 +146,41 @@ public class Program
             }
 
         } while (true);
+    }
+
+    private static void SetCustom()
+    {
+        mainColor = SetCustomHelper("Выбери основной цвет:");
+        secondaryColor = SetCustomHelper("Выбери дополнительный цвет:");
+    }
+
+    private static ConsoleColor SetCustomHelper(string message)
+    {
+        Console.Clear();
+
+        ConsoleColor[] colors = (ConsoleColor[])ConsoleColor.GetValues(typeof(ConsoleColor));
+        ConsoleColor currentColor = ConsoleColor.White;
+        int userNumber;
+
+        do
+        {
+            SystemMessage(message, "1  – Темно-синий \n2  – Темно-зеленый \n3  – Темно-голубой \n4  – Темно-красный \n5  – Темно-фиолетовый \n6  – Темно-желтый \n7  – Темно-серый \n8  – Cерый \n9  – Синий \n10 – Зеленый \n11 – Голубой \n12 – Красный \n13 – Розовый \n14 – Желтый \n15 – Белый\n");
+
+            if (int.TryParse(Console.ReadLine(), out userNumber) && userNumber >= 1 && userNumber <= 16)
+            {
+                if (userNumber == 7 || userNumber == 8)
+                {
+                    userNumber = 15 - userNumber;
+                }
+                currentColor = colors[userNumber];
+            }
+            else
+            {
+                InvalidInput();
+            }
+        } while (userNumber < 1 || userNumber > 16);
+
+        return currentColor;
     }
 
     public static void SelectAnimation()
