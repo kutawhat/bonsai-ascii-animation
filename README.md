@@ -9,9 +9,14 @@ brew install mono
 2. Откройте терминал и перейдите к директиве bonsai
 3. Вбейте в терминале:
 ```zsh
+make
+```
+или
+```zsh
 csc Program.cs
 mono Program.exe
 ```
+
 4. Наслаждайтесь ∗
 
 <!--```zsh
