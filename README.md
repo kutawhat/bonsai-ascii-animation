@@ -13,6 +13,7 @@ public static void SelectAnimation()
 
     //Путь до папки со всеми ascii деревьями
     string mainPath = "/Users/ku/Documents/coding/ascii-animations/bonsai/trees/";
+	
 	...
 }
 ```
