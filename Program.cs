@@ -18,9 +18,9 @@ public class Program
         Console.WriteLine("Некорректный ввод\n");
     }
 
-    private static void SystemMessage(string mainText, string listText)
+    private static void SystemMessage(string mainText, string listText, ConsoleColor headColor)
     {
-        Console.ForegroundColor = ConsoleColor.Green;
+        Console.ForegroundColor = headColor;
         Console.WriteLine(mainText);
         Console.ForegroundColor = ConsoleColor.Gray;
         Console.WriteLine(listText);
@@ -30,9 +30,10 @@ public class Program
     public static void ChooseSeason()
     {
         Console.Clear();
+
         do
         {
-            SystemMessage("Выбери сезон:", "1 – Зима \n2 – Весна \n3 – Лето \n4 – Осень \n5 – Свой вайб\n");
+            SystemMessage("Выбери сезон:", "1 – Зима \n2 – Весна \n3 – Лето \n4 – Осень \n5 – Свой вайб\n", ConsoleColor.Green);
 
             int.TryParse(Console.ReadLine(), out int seasonNumber);
 
@@ -70,9 +71,10 @@ public class Program
     private static void SetSpring()
     {
         Console.Clear();
+
         do
         {
-            SystemMessage("Выбери дерево:", "1 – Сакура \n2 – Павлония \n3 – Магнолия \n4 – Сирень \n5 – Вишня \n6 – Яблоня\n");
+            SystemMessage("Выбери дерево:", "1 – Сакура \n2 – Павлония \n3 – Магнолия \n4 – Сирень \n5 – Вишня \n6 – Яблоня\n", ConsoleColor.Magenta);
 
             int.TryParse(Console.ReadLine(), out int treeNumber);
 
@@ -120,9 +122,10 @@ public class Program
     private static void SetAutumn()
     {
         Console.Clear();
+
         do
         {
-            SystemMessage("Выбери дерево:", "1 – Красное \n2 – Желтое \n3 – Микс\n");
+            SystemMessage("Выбери дерево:", "1 – Красное \n2 – Желтое \n3 – Микс\n", ConsoleColor.Yellow);
 
             int.TryParse(Console.ReadLine(), out int treeNumber);
 
@@ -150,11 +153,11 @@ public class Program
 
     private static void SetCustom()
     {
-        mainColor = SetCustomHelper("Выбери основной цвет:");
-        secondaryColor = SetCustomHelper("Выбери дополнительный цвет:");
+        mainColor = SetCustomHelper("Выбери основной цвет:", ConsoleColor.Green);
+        secondaryColor = SetCustomHelper("Выбери дополнительный цвет:", ConsoleColor.Yellow);
     }
 
-    private static ConsoleColor SetCustomHelper(string message)
+    private static ConsoleColor SetCustomHelper(string message, ConsoleColor headColor)
     {
         Console.Clear();
 
@@ -164,7 +167,7 @@ public class Program
 
         do
         {
-            SystemMessage(message, "1  – Темно-синий \n2  – Темно-зеленый \n3  – Темно-голубой \n4  – Темно-красный \n5  – Темно-фиолетовый \n6  – Темно-желтый \n7  – Темно-серый \n8  – Cерый \n9  – Синий \n10 – Зеленый \n11 – Голубой \n12 – Красный \n13 – Розовый \n14 – Желтый \n15 – Белый\n");
+            SystemMessage(message, "1  – Темно-синий \n2  – Темно-зеленый \n3  – Темно-голубой \n4  – Темно-красный \n5  – Темно-фиолетовый \n6  – Темно-желтый \n7  – Темно-серый \n8  – Cерый \n9  – Синий \n10 – Зеленый \n11 – Голубой \n12 – Красный \n13 – Розовый \n14 – Желтый \n15 – Белый\n", headColor);
 
             if (int.TryParse(Console.ReadLine(), out userNumber) && userNumber >= 1 && userNumber <= 16)
             {
@@ -195,7 +198,7 @@ public class Program
         int animationNumber;
         do
         {
-            SystemMessage("Выбери бонсай", "1 – Без листвы \n2 – С листвой \n3 – С листвой +\n");
+            SystemMessage("Выбери бонсай", "1 – Без листвы \n2 – С листвой \n3 – С листвой +\n", ConsoleColor.Blue);
 
             if (int.TryParse(Console.ReadLine(), out animationNumber) && animationNumber >= 1 && animationNumber <= 3)
             {
@@ -221,29 +224,28 @@ public class Program
     public static void PrintBonsai(string tree)
     {
         Console.Clear();
+
         while (!Console.KeyAvailable)
         {
             SetChars(tree, 0, false);
-            Console.Clear();
             SetChars(tree, 1, false);
-            Console.Clear();
         }
     }
 
     public static void PrintBonsai(string tree1, string tree2)
     {
         Console.Clear();
+
         while (!Console.KeyAvailable)
         {
-            Console.Clear();
             SetChars(tree1, 0, true);
-            Console.Clear();
             SetChars(tree2, 1, true);
         }
     }
     public static void SetChars(string tree, int j, bool isDouble)
     {
         Console.Clear();
+
         ConsoleColor currentColor;
 
         for (int i = 0; i < tree.Length; i++)
