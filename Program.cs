@@ -230,7 +230,7 @@ public class Program
         int animationNumber;
         do
         {
-            SystemMessage("Выбери бонсай", "1 – Без листвы \n2 – С листвой \n3 – С листвой +\n", ConsoleColor.Blue, false);
+            SystemMessage("Выбери бонсай", "1 – Без падающей листвы \n2 – С листвой \n3 – С листвой +\n", ConsoleColor.Blue, false);
 
             if (int.TryParse(Console.ReadLine(), out animationNumber) && animationNumber >= 1 && animationNumber <= 3)
             {
